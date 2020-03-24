@@ -1,7 +1,14 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-//cghhvbkjnm
+
+//use express router
+
+app.use('/',require('./routes'));
+
+
+
+
 app.listen(port,function(err){
     if(err){
         //interpolation-include variable inside string
