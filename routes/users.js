@@ -6,7 +6,9 @@ const postsController = require('../controllers/posts');
 
 console.log('users loaded');
 router.get('/profile',usersController.profile);
+router.get('/signup',usersController.signup);
+router.get('/signin',usersController.signin);
 router.get('/posts',postsController.posts);
-
+router.post('/create',usersController.create);
 
 module.exports = router;
