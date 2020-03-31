@@ -7,11 +7,17 @@ module.exports.profile = function(req,res){
 }
 
 module.exports.signup = function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     res.render('Signup',{
         title: "signup"
     });
 }
 module.exports.signin = function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     res.render('SignIn',{
         title: "signin"
     });
@@ -42,7 +48,12 @@ module.exports.create = function(req,res){
     });
 }
 
-
+//sign out
+module.exports.destroySession = function(req,res){
+    //passport function...logout()
+    req.logout();
+    return res.redirect('/')
+}
 module.exports.createsession = function(req,res){
-    //To Do
+    return res.redirect('/users/profile');
 }
