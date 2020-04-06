@@ -1,3 +1,14 @@
 <footer>
-    page footer
+    <div id="footer-style">
+        <p>
+            &copy;Nikhil Ranjan
+        </p>
+        <a href="/">Home</a>
+        <% if(locals.user){ %>
+            <a href="/users/profile">
+                <%= user.name %>
+            </a>
+        <% } %>
+        </a>
+    </div>
 </footer>

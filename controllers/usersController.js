@@ -1,5 +1,4 @@
-const User = require('../models/user')
-
+const User = require('../models/user');
 module.exports.profile = function(req,res){
     res.render('user_profile',{
         title:"profile"
@@ -8,7 +7,7 @@ module.exports.profile = function(req,res){
 
 module.exports.signup = function(req,res){
     if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
+        return res.redirect('/');
     }
     res.render('Signup',{
         title: "signup"
@@ -16,7 +15,7 @@ module.exports.signup = function(req,res){
 }
 module.exports.signin = function(req,res){
     if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
+        return res.redirect('/');
     }
     res.render('SignIn',{
         title: "signin"
@@ -55,5 +54,5 @@ module.exports.destroySession = function(req,res){
     return res.redirect('/')
 }
 module.exports.createsession = function(req,res){
-    return res.redirect('/users/profile');
+    return res.redirect('/');
 }
