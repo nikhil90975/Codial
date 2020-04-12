@@ -1,4 +1,6 @@
 #footer-style {
   background-color: grey;
   display: flex;
-  align-items: flex-start; }
+  height: 50px;
+  margin-top: 0vh;
+  position: relative; }

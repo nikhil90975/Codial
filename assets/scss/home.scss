@@ -1,0 +1,26 @@
+#feed-posts{
+    #post-container{
+        ul{
+            list-style-type: none;
+            #usernames{
+                a{
+                    text-decoration: solid;
+                    margin: 10px;
+                }
+            }
+            .contact{
+                .details{
+                    p{
+                        display: inline;
+                        margin: 10px;
+                       // margin-left: 25px;
+                    }
+                    .delete-button{
+                        display: inline;
+                    }
+                }
+            }
+        }
+        
+    }
+}

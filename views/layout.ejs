@@ -8,9 +8,11 @@
         <link rel="stylesheet" href="/css/layout.css">
         <link rel="stylesheet" href="/css/header.css">
         <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/home.css">
         <%- style %>
     </head>
     <body>
+        <div class="container">
         <%- include('_header'); %>
         <main id="layout-main">
             <%- body %>
@@ -18,5 +20,6 @@
         
         <%- include('_footer'); %>
         <%- script %>
+    </div>
     </body>
 </html>

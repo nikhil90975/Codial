@@ -10,6 +10,7 @@ console.log('router loaded');
 router.get('/',homeController.home);
 router.use('/users',require('./users'));
 router.use('/posts',require('./posts'));
+router.use('/comment',require('./comment'));
 //router.use('/users/posts',require('./users'));
 
 
