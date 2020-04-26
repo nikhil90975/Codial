@@ -14,6 +14,11 @@ const MongoStore = require('connect-mongo')(session);
 //scss
 const sassMiddleware = require('node-sass-middleware');
 
+//flash massage
+const flash = require('connect-flash');
+//flash middleware
+const customMware = require('./config/middleware');
+
 app.use(sassMiddleware({
     src:'./assets/scss',
     dest: './assets/css',
@@ -64,7 +69,9 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+//flash massage in session
+app.use(flash());
+app.use(customMware.setFlash);
 
 //middleware for (whenever passport is initialised and session is used..authenticated user is set)
 app.use(passport.setAuthenticated);
