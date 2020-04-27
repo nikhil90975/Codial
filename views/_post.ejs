@@ -1,9 +1,14 @@
-<li class="contact">
+<li class="post-<%= i._id %>">
     <div class="details">
+        <div id="usernames">
+            <a href="/users/profile/<%= i.user.id %>">
+                <%= i.user.name %>
+            </a>
+        </div>
         <p>
             <% if(locals.user && locals.user.id==i.user.id){ %>
             <small>
-                <a href="/posts/destroy/<%= i.id %>">X</a>
+                <a class="delete-post-button" href="/posts/destroy/<%= i.id %>">X</a>
             </small>
             <% } %>
             <%= i.content %></p>

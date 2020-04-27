@@ -6,6 +6,7 @@ module.exports.home = async function(req,res){
     try{
         //nested prepopulating
         let post_list = await Post.find({})
+        .sort('-createdAt')
         .populate('user')
         .populate({
             path: 'comments',

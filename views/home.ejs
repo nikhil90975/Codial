@@ -12,11 +12,7 @@
         <div id="post-container">
             <ul >
                 <% for(i of post_view){%>
-                    <div id="usernames">
-                        <a href="/users/profile/<%= i.user.id %>">
-                            <%= i.user.name %>
-                        </a>
-                    </div>
+                    
                 <%- include('_post') -%>
                 
                 <% } %>
