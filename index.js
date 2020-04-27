@@ -31,6 +31,8 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 //static file
 app.use(express.static('./assets'));
+//for file uploads available to browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 
 //layouts
 app.use(expressLayouts);
