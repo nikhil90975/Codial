@@ -10,7 +10,8 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 //jwt-strategy
-const passportJWT = require('./config/passport-jwt-strategy')
+const passportJWT = require('./config/passport-jwt-strategy');
+const passportGoogle = require('./config/passport-google-oauth2-strategy');
 //persistent storage for cookie
 const MongoStore = require('connect-mongo')(session);
 //scss
