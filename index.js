@@ -9,6 +9,8 @@ const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+//jwt-strategy
+const passportJWT = require('./config/passport-jwt-strategy')
 //persistent storage for cookie
 const MongoStore = require('connect-mongo')(session);
 //scss
