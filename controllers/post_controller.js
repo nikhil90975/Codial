@@ -34,7 +34,7 @@ if(post.user == req.user.id){
     
     //delete the associatedd like
     await Like.deleteMany({likeable: post, onModel: 'Post'});
-    await Like.deleteMany({_id : {$in: post.comment}});
+    await Like.deleteMany({_id : {$in: post.comments}});
     post.remove();
 
     await Comment.deleteMany({post: req.params._id});

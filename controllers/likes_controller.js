@@ -4,41 +4,43 @@ const Comment = require('../models/comment');
 
 module.exports.toggleLike = async function(req,res){
     try {
-        console.log('i m here');
+        console.log('i m here jii');
         //likes/toggle/id=abcd&type=Post;
-        let likable;
+        let likeable;
         let deleted = false;
-
+        console.log(req.query.type);
         if(req.query.type=='Post'){
-            likable = await Post.findById(req.query.id).populate('likes');
+            likeable = await Post.findById(req.query.id).populate('likes');
         }else{
-            likable = await Comment.findById(req.query.id).populate('likes');
+            likeable = await Comment.findById(req.query.id).populate('likes');
         }
-        console.log(likable);
+        
         //check if like already exists
 
         let existingLike = await Like.findOne({
-            likable: req.query.id,
+            likeable: req.query.id,
             onModel: req.query.type,
             user:req.user._id
         });
-
+        
         // if a like already exists then delete it
         if(existingLike){
-            likable.likes.pull(existingLike._id);
-            likable.save();
+            likeable.likes.pull(existingLike._id);
+            likeable.save();
 
             existingLike.remove();
+            deleted = true;
         }else{
             //make a new like
             let newLike = await Like.create({
                 user: req.user._id,
-                likable: req.query.id,
+                likeable: req.query.id,
                 onModel: req.query.type
             });
+           
 
-            likable.likes.push(newLike._id);
-            likable.save();
+            likeable.likes.push(newLike._id);
+            likeable.save();
             
         }
 
