@@ -1,0 +1,21 @@
+#home-container {
+  display: flex; }
+  #home-container #feed-posts {
+    margin-left: 30%;
+    border-left: 1px solid lightgrey;
+    width: 70%;
+    padding: 10px; }
+    #home-container #feed-posts #post-container ul {
+      list-style-type: none; }
+      #home-container #feed-posts #post-container ul #usernames a {
+        text-decoration: solid;
+        margin: 10px; }
+      #home-container #feed-posts #post-container ul .contact .details p {
+        display: inline;
+        margin: 10px; }
+      #home-container #feed-posts #post-container ul .contact .details .delete-button {
+        display: inline; }
+  #home-container #user_friends {
+    width: 30%;
+    padding: 10px;
+    border-left: 1px solid lightgrey; }
