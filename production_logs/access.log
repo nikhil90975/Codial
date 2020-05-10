@@ -1,0 +1,7 @@
+[0mGET / [32m200[0m 1493.957 ms - 14184[0m
+[0mGET /users/signup [36m304[0m 111.138 ms - -[0m
+[0mGET /users/signin [36m304[0m 24.452 ms - -[0m
+[0mPOST /users/createsession [36m302[0m 97.562 ms - 70[0m
+[0mGET /users/signin [32m200[0m 4.230 ms - 2240[0m
+[0mPOST /users/createsession [36m302[0m 24.407 ms - 46[0m
+[0mGET / [32m200[0m 68.306 ms - 18407[0m

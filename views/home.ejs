@@ -19,15 +19,49 @@
             </ul>
         </div>
     </section>
-
     <section id="user_friends">
+        <section >
+            <h4>Friends</h4>
+            <% for(u of all_users){ %>
+                <% if(locals.user && locals.user.id == u.id){ %>
+                    <% for(uf of u.friendship){ %>
+                        <a href="/users/profile/<%= uf.id %>"><%= uf.name %></a>
+                        <br>
+                        <br>
+                    <% } %>
+                <% } %>
+            <% } %>
+        </section>
+        <section id="users">
+            <h4>Users</h4>
+            <% for(u of all_users){ %>
+                <p>
+                    <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+                    <strong>
+                        <a href="/friends/create/<%= u._id %>">+</a>
+                    </strong>
+                    
+                </p>
+            <% } %>
+        </section>
+    </section>
+    <!-- <section id="user_friends">
         <h4>Friends</h4>
         <% for(u of all_users){ %>
             <p>
                 <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
             </p>
         <% } %>
-    </section>
+    </section> -->
+    <!-- <section id="users">
+        <h4>Friends</h4>
+        <% for(u of all_users){ %>
+            <p>
+                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+            </p>
+        <% } %>
+    </section> -->
+    <%- include('_chat_box') -%>
 </div>
 <script src="/js/home_comments.js"></script>
 <script src="/js/home_posts.js"></script>
@@ -38,3 +72,11 @@
         let toggleLike = new ToggleLike(self);
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<% if(locals.user) { %>
+<script>
+    new ChatEngine('user-chat-box','<%= locals.user.email %>');
+</script>
+
+<% } %>
